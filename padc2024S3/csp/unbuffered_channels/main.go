@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	ch := make(chan string)
@@ -8,6 +10,6 @@ func main() {
 	go func() { // send
 		ch <- "Hello world!"
 	}()
-
+	
 	fmt.Println(<-ch) // receive
 }
